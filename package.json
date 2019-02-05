@@ -13,7 +13,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.9",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
     "dotenv": "^6.2.0"

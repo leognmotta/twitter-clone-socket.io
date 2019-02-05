@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const tweetRoutes = require('./routes/TweetRoutes');
+const likeRoutes = require('./routes/LikeRoutes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 });
 
 app.use(tweetRoutes);
+app.use(likeRoutes);
 
 mongoose
   .connect(
