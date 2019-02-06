@@ -1,13 +1,21 @@
 const Tweet = require('../models/Tweet');
 
 exports.putAddLike = async (req, res, next) => {
-  const tweet = await Tweet.findById(req.params.id);
+  try {
+    const tweet = await Tweet.findById(req.params.id);
 
-  tweet.set({ likes: tweet.likes + 1 });
+    tweet.set({ likes: tweet.likes + 1 });
 
-  await tweet.save();
+    await tweet.save();
 
-  req.io.emit('like', tweet);
+    req.io.emit('like', tweet);
 
-  return res.status(200).json(tweet);
+    return res.status(200).json(tweet);
+  } catch {
+    const error = {
+      status: 404,
+      message: 'Unable to like tweet.'
+    };
+    next(error);
+  }
 };
