@@ -21,7 +21,7 @@ require('dotenv/config')
 require('../src/app.js')
 ```
 
-For more information about dorenv click [here](https://www.npmjs.com/package/dotenv)
+For more information about dotenv click [here](https://www.npmjs.com/package/dotenv)
 
 environment variables:
 
