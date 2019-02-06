@@ -17,3 +17,5 @@ It will start the server on the .env.PORT or port 8080
 environment variables:
 
 `PORT, DB_USER, DB_PASSWORD, DB_NAME`
+
+**This project uses Mongodb Atlas URI**
