@@ -1,6 +1,6 @@
-# My Twitter backend colne with socket.io
+# Twitter backend clone with socket.io
 
-## Intructions:
+## Instructions:
 
 In the project directory, you can run:
 
