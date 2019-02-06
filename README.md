@@ -1,5 +1,9 @@
 # Twitter backend clone with socket.io
 
+**Note: the frontend app for this api can be found on the link below:**
+
+[twitter-clone-react](https://github.com/leomotta121/twitter-clone-react)
+
 ## Instructions:
 
 In the project directory, you can run:
