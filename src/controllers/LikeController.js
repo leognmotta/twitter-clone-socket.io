@@ -7,5 +7,7 @@ exports.putAddLike = async (req, res, next) => {
 
   await tweet.save();
 
+  req.io.emit('like', tweet);
+
   return res.status(200).json(tweet);
 };

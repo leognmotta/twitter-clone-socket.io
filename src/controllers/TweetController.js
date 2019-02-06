@@ -9,5 +9,7 @@ exports.getTweets = async (req, res, next) => {
 exports.postCreateTweet = async (req, res, next) => {
   const tweet = await Tweet.create(req.body);
 
+  req.io.emit('tweet', tweet);
+
   return res.status(201).json(tweet);
 };

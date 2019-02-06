@@ -1,3 +1,5 @@
+const http = require('http');
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -6,6 +8,15 @@ const tweetRoutes = require('./routes/TweetRoutes');
 const likeRoutes = require('./routes/LikeRoutes');
 
 const app = express();
+
+const server = http.Server(app);
+const io = require('socket.io')(server);
+
+app.use((req, res, next) => {
+  req.io = io;
+
+  return next();
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -34,7 +45,7 @@ mongoose
     { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true }
   )
   .then(result => {
-    app.listen(process.env.PORT || 8080, () => {
+    server.listen(process.env.PORT || 8080, () => {
       console.log(`App listening on port ${process.env.PORT || 8080}`);
     });
   })
