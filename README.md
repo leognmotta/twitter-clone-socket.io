@@ -1,4 +1,4 @@
-# My Twitter backend colne with socket.io
+# My Twitter backend clone with socket.io
 
 ## Intructions:
 
